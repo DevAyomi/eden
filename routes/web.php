@@ -18,7 +18,21 @@ use App\Http\Controllers\LoginController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});
 
+//Redirect Route here
+Route::get('redirect', [LoginController::class, 'redirect'])->name('redirect');
+
+//Login Routes Here
 Route::get('/login', [LoginController::class, 'index'])->name('/login');
+Route::post('/login', [LoginController::class, 'login'])->name('/login-check');
+
+//Register Routes Here
 Route::get('/register', [RegisterController::class, 'index'])->name('/register');
+Route::post('/register', [RegisterController::class, 'store'])->name('/register-store');
+
+//Logout Routes Here
+Route::post('/logout', [LoginController::class, 'logout'])->name('/logout');
 

@@ -30,32 +30,48 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('ed/images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" action="{{ route('/register-store') }}">
+					@csrf
+					<button class="btn btn-info"><a class="text-light" href="{{ url('/') }}">Back To Home</a></button>
 
 					<span class="login100-form-title p-b-34 p-t-27">
 						Register
 					</span>
 
-					<div class="wrap-input100 validate-input">
+					@if ( Session::has('success') )
+						<strong>{{ Session::get('success') }}</strong>
+					@endif
+
+					@if ($errors->any())
+					    <div class="alert alert-danger">
+					        <ul>
+					            @foreach ($errors->all() as $error)
+					                <li>{{ $error }}</li>
+					            @endforeach
+					        </ul>
+					    </div>
+					@endif
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter your name">
 						<input class="input100" type="text" name="fullname" placeholder="Fullname">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input">
+					<div class="wrap-input100 validate-input" data-validate = "Enter Email">
 						<input class="input100" type="email" name="email" placeholder="Email">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					<div class="wrap-input100 validate-input" data-validate = "Enter Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="password" name="confpass" placeholder="Confirm Password">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					<div class="wrap-input100 validate-input" data-validate = "Confirm your password">
+						<input class="input100" type="password" name="password_confirmation" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
