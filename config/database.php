@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 
 return [
 
+    $DATABASE_URL=parse_url(‘ postgres://wqczacodwqrdfc:4d17f3e8a87c8f5aec95bb319c80d7e06bf8d4e490366d683040bf71cf82ecce@ec2-54-147-107-18.compute-1.amazonaws.com:5432/d3immelpssjotg’);
+
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
