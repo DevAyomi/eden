@@ -56,8 +56,14 @@ class AdminStore extends Command
         $user->email = $userEmail;
         $user->password = Hash::make($password);
 
-        $this->info("Admin account has been created");
-        return Command::SUCCESS;
+        if($user->save()){
+             $this->info("Admin account has been created");
+            return Command::SUCCESS;  
+        }else{
+             $this->info("Error while trying to create an account");
+            return Command::SUCCESS;  
+        }
+
        
     }
 }
