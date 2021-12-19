@@ -7,5 +7,16 @@
 </head>
 <body>
 	<h4>Admin dashboard work in progress</h4>
+	<a href="{{ url('/') }}">Back to home</a>
+	<br>
+	 @if (Auth::check() )
+                        <li>
+                             <form method="post" action="{{ route('/logout') }}">
+                                @csrf
+                               <button class="mt-4 btn btn-info">Logout</button>
+                            </form>
+                        </li>
+    @endif
+
 </body>
 </html>

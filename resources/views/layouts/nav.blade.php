@@ -64,7 +64,7 @@
                         <li class="list-inline-item list_c"><a href="{{ route('/register') }}">Register</a></li>
                         <li class="list-inline-item list_c"><a href="{{ route('/login') }}">Login</a></li>
                        @endif
-                        
+
                     </ul>
                 </nav>
             </div>
@@ -72,16 +72,16 @@
        
         <!-- Main Header Nav For Mobile -->
         <div id="page" class="stylehome1 h0">
-            <div class="mobile-menu">
-                <div class="header stylehome1">
+             <div class="header stylehome1">
                     <div class="main_logo_home2 text-center"> <img class="nav_logo_img img-fluid mt10" src="images/header-logo.svg" alt="header-logo.svg"> <span class="mt15">Eden Homes</span> </div>
                     <ul class="menu_bar_home2">
                         <li class="list-inline-item">
                             <a class="custom_search_with_menu_trigger msearch_icon" href="#"></a>
                         </li>
+                        
+                        <li class="list-inline-item"><a class="menubar" href="#menu"><span></span></a></li>
                     </ul>
                 </div>
-            </div>
             <!-- /.mobile-menu -->
             <nav id="menu" class="stylehome1">
                 <ul>
@@ -103,8 +103,17 @@
                         </ul>
                     </li>
                     <li><a href="page-contact.html">Contact</a></li>
-                    <li><a href="{{ route('/register') }}">Register</a></li>
-                    <li><a href="{{ route('/login') }}">Login</a></li>
+                     @if (Auth::check() )
+                        <li>
+                             <form method="post" action="{{ route('/logout') }}">
+                                @csrf
+                               <button class="mt-4 btn btn-info">Logout</button>
+                            </form>
+                        </li>
+                       @else
+                        <li><a href="{{ route('/register') }}">Register</a></li>
+                        <li><a href="{{ route('/login') }}">Login</a></li>
+                       @endif
                 </ul>
             </nav>
         </div>
