@@ -80,7 +80,7 @@
                          <li class="list-inline-item">
                             <a class="custom_search_with_menu_trigger msearch_icon" href="#"></a>
                         </li>
-                        <li class="list-inline-item"><a class="muser_icon" href="#" data-toggle="modal" data-target="#logInModal"><span class="flaticon-user"></span></a></li>
+                        <li style="display: none;" class="list-inline-item"><a class="muser_icon" href="#" data-toggle="modal" data-target="#logInModal"><span class="flaticon-user"></span></a></li>
                         <li class="list-inline-item"><a class="menubar" href="#menu"><span></span></a></li>
                     </ul>
                 </div>
