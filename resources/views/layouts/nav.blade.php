@@ -1,8 +1,8 @@
-<!-- Main Header Nav -->
+ <!-- Main Header Nav -->
         <header class="header-nav menu_style_home_five navbar-scrolltofixed stricky main-menu">
             <div class="container">
                 <!-- Ace Responsive Menu -->
-                <nav>
+                 <nav>
                     <!-- Menu Toggle btn-->
                     <div class="menu-toggle">
                         <img class="nav_logo_img img-fluid" src="images/header-logo.svg" alt="header-logo.svg">
@@ -70,20 +70,23 @@
             </div>
         </header>
        
+
         <!-- Main Header Nav For Mobile -->
         <div id="page" class="stylehome1 h0">
-             <div class="header stylehome1">
+            <div class="mobile-menu">
+               <div class="header stylehome1">
                     <div class="main_logo_home2 text-center"> <img class="nav_logo_img img-fluid mt10" src="images/header-logo.svg" alt="header-logo.svg"> <span class="mt15">Eden Homes</span> </div>
                     <ul class="menu_bar_home2">
-                        <li class="list-inline-item">
+                         <li class="list-inline-item">
                             <a class="custom_search_with_menu_trigger msearch_icon" href="#"></a>
                         </li>
-                        
+                        <li class="list-inline-item"><a class="muser_icon" href="#" data-toggle="modal" data-target="#logInModal"><span class="flaticon-user"></span></a></li>
                         <li class="list-inline-item"><a class="menubar" href="#menu"><span></span></a></li>
                     </ul>
                 </div>
+            </div>
             <!-- /.mobile-menu -->
-            <nav id="menu" class="stylehome1">
+           <nav id="menu" class="stylehome1">
                 <ul>
                     <li><a href="index.html"><span>Home</span></a></li>
                     <li><span>Listing</span>
